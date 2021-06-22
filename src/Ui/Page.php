@@ -2,12 +2,12 @@
 
 namespace Macrame\Ui;
 
-use Macrame\Contracts\Form\Form;
-use Macrame\Contracts\Ui\Page as PageContract;
-use Macrame\Ui\Table\Table;
 use Illuminate\Contracts\Support\Responsable;
 use Inertia\Inertia;
 use Inertia\Response;
+use Macrame\Contracts\Form\Form;
+use Macrame\Contracts\Ui\Page as PageContract;
+use Macrame\Ui\Table\Table;
 
 class Page implements PageContract, Responsable
 {
