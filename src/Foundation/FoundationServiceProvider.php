@@ -2,9 +2,9 @@
 
 namespace Macrame\Foundation;
 
-use Macrame\Support\FileResponse;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Macrame\Support\FileResponse;
 
 class FoundationServiceProvider extends ServiceProvider
 {

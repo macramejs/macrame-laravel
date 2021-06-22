@@ -2,11 +2,11 @@
 
 namespace Tests\Ui;
 
+use Illuminate\Testing\AssertableJsonString;
 use Macrame\Contracts\Form\Fields\Titleable;
 use Macrame\Contracts\Ui\Component;
 use Macrame\Form\Field;
 use Macrame\Form\Fields\Traits\HasTitle;
-use Illuminate\Testing\AssertableJsonString;
 use PHPUnit\Framework\TestCase;
 
 class FieldHasTitleTest extends TestCase

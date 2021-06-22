@@ -2,9 +2,9 @@
 
 namespace Macrame\Form;
 
-use Macrame\Contracts\Form\Form as FormContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Macrame\Contracts\Form\Form as FormContract;
 
 abstract class Form implements FormContract
 {
