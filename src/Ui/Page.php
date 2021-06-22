@@ -76,6 +76,19 @@ class Page implements PageContract, Responsable
     }
 
     /**
+     * Add component to the page.
+     *
+     * @param \Macrame\Contracts\Ui\Component|string $component
+     * @return $this
+     */
+    public function component($component)
+    {
+        $this->components[] = component($component);
+
+        return $this;
+    }
+
+    /**
      * Add a form to the page.
      *
      * @param  Form   $form

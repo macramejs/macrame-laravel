@@ -10,6 +10,10 @@ if (! function_exists('component')) {
      */
     function component($name, $props = [])
     {
+        if ($name instanceof \Macrame\Contracts\Ui\Component) {
+            return $name->bind($props);
+        }
+
         return (new Macrame\Ui\Component($name))->bind($props);
     }
 }
