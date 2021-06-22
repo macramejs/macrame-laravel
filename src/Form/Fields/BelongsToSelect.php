@@ -2,8 +2,8 @@
 
 namespace Macrame\Form\Fields;
 
-use Macrame\Form\Field;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Macrame\Form\Field;
 
 class BelongsToSelect extends Field
 {

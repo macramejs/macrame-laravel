@@ -2,11 +2,11 @@
 
 namespace Tests\Ui;
 
-use Macrame\Contracts\Ui\Page as PageContract;
-use Macrame\Ui\Page;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Inertia\Response as InertiaResponse;
+use Macrame\Contracts\Ui\Page as PageContract;
+use Macrame\Ui\Page;
 use PHPUnit\Framework\TestCase;
 
 class PageTest extends TestCase

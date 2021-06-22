@@ -2,9 +2,9 @@
 
 namespace Tests\Ui;
 
+use Illuminate\Testing\AssertableJsonString;
 use Macrame\Contracts\Ui\Component;
 use Macrame\Form\Fields\Textarea;
-use Illuminate\Testing\AssertableJsonString;
 use PHPUnit\Framework\TestCase;
 
 class FieldTextareaTest extends TestCase

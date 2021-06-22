@@ -2,8 +2,8 @@
 
 namespace Macrame\Ui;
 
-use Macrame\Contracts\Ui\Component as ComponentContract;
 use Illuminate\Contracts\Support\Arrayable;
+use Macrame\Contracts\Ui\Component as ComponentContract;
 
 class Component implements ComponentContract
 {
