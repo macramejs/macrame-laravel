@@ -64,7 +64,7 @@ class Select extends Field implements Titleable
     protected function getSelectComponent()
     {
         return component($this->selectComponentName)->bind([
-            'options' => $this->options
+            'options' => $this->options,
         ]);
     }
 }

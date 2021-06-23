@@ -2,10 +2,10 @@
 
 namespace Tests\Ui;
 
+use Illuminate\Testing\AssertableJsonString;
+use Macrame\Contracts\Ui\Component;
 use Macrame\Form\Fields\Select;
 use PHPUnit\Framework\TestCase;
-use Macrame\Contracts\Ui\Component;
-use Illuminate\Testing\AssertableJsonString;
 
 class FieldSelectTest extends TestCase
 {
