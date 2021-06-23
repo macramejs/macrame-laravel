@@ -56,7 +56,7 @@ abstract class Table
      *
      * @var string
      */
-    protected $searchComponentName = 'ui-index-search';
+    protected $searchComponentName = 'ui-input';
 
     /**
      * Pagination ui component name.
