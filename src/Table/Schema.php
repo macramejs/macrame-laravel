@@ -1,10 +1,10 @@
 <?php
 
-namespace Macrame\Ui\Table;
+namespace Macrame\Table;
 
-use Illuminate\Contracts\Support\Arrayable;
+use Macrame\Contracts\Support\Schema as SchemaContract;
 
-class Schema implements Arrayable
+class Schema implements SchemaContract
 {
     /**
      * Table columns.

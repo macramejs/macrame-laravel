@@ -6,8 +6,8 @@ use Illuminate\Contracts\Support\Responsable;
 use Inertia\Inertia;
 use Inertia\Response;
 use Macrame\Contracts\Form\Form;
+use Macrame\Contracts\Table\Table;
 use Macrame\Contracts\Ui\Page as PageContract;
-use Macrame\Ui\Table\Table;
 
 class Page implements PageContract, Responsable
 {
@@ -78,7 +78,7 @@ class Page implements PageContract, Responsable
     /**
      * Add component to the page.
      *
-     * @param \Macrame\Contracts\Ui\Component|string $component
+     * @param  \Macrame\Contracts\Ui\Component|string $component
      * @return $this
      */
     public function component($component)
@@ -106,8 +106,8 @@ class Page implements PageContract, Responsable
     /**
      * Add table to page.
      *
-     * @param Table $table
-     * @param string $route
+     * @param  Table  $table
+     * @param  string $route
      * @return $this
      */
     public function table(Table $table, $route)
