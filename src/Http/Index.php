@@ -19,8 +19,8 @@ class Index
     /**
      * Create new Index instance.
      *
-     * @param  array $filter
-     * @param  array $searchKeys
+     * @param  array  $filter
+     * @param  array  $searchKeys
      * @return void
      */
     public function __construct(
@@ -51,7 +51,7 @@ class Index
         // TODO:
     }
 
-    protected function paginate(Request $request, Builder $query): Paginator | CursorPaginator
+    protected function paginate(Request $request, Builder $query): Paginator|CursorPaginator
     {
         return $query->paginate(
             perPage: $request->perPage ?: $this->defaultPerPage,

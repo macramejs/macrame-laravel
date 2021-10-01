@@ -17,7 +17,7 @@ class Filter
     /**
      * Create new Filter instance.
      *
-     * @param  Closure|string|array          $handler
+     * @param  Closure|string|array  $handler
      * @return \Macrame\Table\Filters\Filter
      */
     public function __construct($handler)
@@ -28,8 +28,8 @@ class Filter
     /**
      * Apply filter attributes to the query builder.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder $builder
-     * @param  array                                 $attributes
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @param  array  $attributes
      * @return void
      */
     public function apply($builder, $attributes)

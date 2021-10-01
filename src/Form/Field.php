@@ -31,7 +31,7 @@ abstract class Field implements FieldContract
     /**
      * Create new field instance.
      *
-     * @param string $attribute
+     * @param  string  $attribute
      */
     public function __construct($attribute)
     {
@@ -42,7 +42,7 @@ abstract class Field implements FieldContract
     /**
      * Mount the field.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function mount($component)
@@ -53,7 +53,7 @@ abstract class Field implements FieldContract
     /**
      * Bind the field to the given form.
      *
-     * @param  Form $form
+     * @param  Form  $form
      * @return void
      */
     public function bind(Form $form)
@@ -82,7 +82,7 @@ abstract class Field implements FieldContract
     /**
      * Call mount mehtodes of traits.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     protected function mountTraits(Component $component)

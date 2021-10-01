@@ -24,7 +24,7 @@ class Schema
     /**
      * Add an array of fields.
      *
-     * @param array $fields
+     * @param  array  $fields
      * @return $this
      */
     public function fields(array $fields)
@@ -39,7 +39,7 @@ class Schema
     /**
      * Add a file.d.
      *
-     * @param Field $field
+     * @param  Field  $field
      * @return $this
      */
     public function field(Field $field)
@@ -53,7 +53,7 @@ class Schema
     /**
      * Bind the form to the given component.
      *
-     * @param \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function bindTo(Component $component)

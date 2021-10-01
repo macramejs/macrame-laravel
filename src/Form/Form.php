@@ -32,7 +32,7 @@ abstract class Form implements FormContract
     /**
      * Build the form schema.
      *
-     * @param  Schema $form
+     * @param  Schema  $form
      * @return void
      */
     abstract public function schema(Schema $form);
@@ -40,7 +40,7 @@ abstract class Form implements FormContract
     /**
      * Create new Form instance.
      *
-     * @param  Model $model
+     * @param  Model  $model
      * @return void
      */
     public function __construct($model)
@@ -51,8 +51,8 @@ abstract class Form implements FormContract
     /**
      * Update the given model.
      *
-     * @param  Request $request
-     * @param  Model   $model
+     * @param  Request  $request
+     * @param  Model  $model
      * @return void
      */
     public function update(Request $request)
@@ -67,7 +67,7 @@ abstract class Form implements FormContract
     /**
      * Store a new model.
      *
-     * @param  Request $request
+     * @param  Request  $request
      * @return void
      */
     public function store(Request $request)
@@ -126,8 +126,8 @@ abstract class Form implements FormContract
     /**
      * Render the form.
      *
-     * @param  string $route
-     * @param  bool   $store
+     * @param  string  $route
+     * @param  bool  $store
      * @return Schema
      */
     public function render($route, $store = false)

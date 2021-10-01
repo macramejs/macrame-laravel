@@ -23,7 +23,7 @@ class Column implements Arrayable
     /**
      * Set column label.
      *
-     * @param  string $label
+     * @param  string  $label
      * @return $this
      */
     public function label($label)
@@ -36,7 +36,7 @@ class Column implements Arrayable
     /**
      * Set column value.
      *
-     * @param  string $value
+     * @param  string  $value
      * @return $this
      */
     public function value($value)

@@ -38,8 +38,8 @@ class BelongsToSelect extends Field
     /**
      * Create new BelongsToSelect instance.
      *
-     * @param  BelongsTo $relation
-     * @param  string    $indexRoute
+     * @param  BelongsTo  $relation
+     * @param  string  $indexRoute
      * @return void
      */
     public function __construct(BelongsTo $relation, $indexRoute)
@@ -53,7 +53,7 @@ class BelongsToSelect extends Field
     /**
      * Mount the field.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function mount($component)
@@ -67,7 +67,7 @@ class BelongsToSelect extends Field
     /**
      * Set the value that is being displayed in the select field.
      *
-     * @param  string $value
+     * @param  string  $value
      * @return $this
      */
     public function value($value)

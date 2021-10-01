@@ -7,7 +7,7 @@ interface Filter
     /**
      * Render the table.
      *
-     * @param  string                         $route
+     * @param  string  $route
      * @return \Ignite\Contracts\Ui\Component
      */
     public function render($route);

@@ -30,7 +30,7 @@ trait HasTitle
     /**
      * Set field title.
      *
-     * @param  string $title
+     * @param  string  $title
      * @return $this
      */
     public function title($title)
@@ -43,7 +43,7 @@ trait HasTitle
     /**
      * Set field title html tag.
      *
-     * @param  string $tag
+     * @param  string  $tag
      * @return $this
      */
     public function titleTag($tag)
@@ -56,7 +56,7 @@ trait HasTitle
     /**
      * Determine wether the field has a title.
      *
-     * @param  bool $hasTitle
+     * @param  bool  $hasTitle
      * @return bool
      */
     public function hasTitle(bool $hasTitle)
@@ -69,7 +69,7 @@ trait HasTitle
     /**
      * Call mount mehtodes of traits.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function mountHasTitle(Component $component)

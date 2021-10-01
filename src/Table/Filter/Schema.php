@@ -16,8 +16,8 @@ class Schema implements SchemaContract
     /**
      * Add a filter.
      *
-     * @param  string                        $name
-     * @param  Closure|string|array          $handler
+     * @param  string  $name
+     * @param  Closure|string|array  $handler
      * @return \Macrame\Table\Filters\Filter
      */
     public function add($name, $handler)

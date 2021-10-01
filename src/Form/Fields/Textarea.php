@@ -33,7 +33,7 @@ class Textarea extends Field implements Titleable
     /**
      * Mount the field.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function mount($component)
@@ -58,7 +58,7 @@ class Textarea extends Field implements Titleable
     /**
      * Set the minimum number of rows to display. Must be a value greater than 1.
      *
-     * @param  int   $count
+     * @param  int  $count
      * @return $this
      */
     public function rows(int $count)

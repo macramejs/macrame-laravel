@@ -42,8 +42,8 @@ class Page implements PageContract, Responsable
     /**
      * Mount the page.
      *
-     * @param  Response $response
-     * @param  Response $inertia
+     * @param  Response  $response
+     * @param  Response  $inertia
      * @return void
      */
     public function mount(Response $inertia)
@@ -64,7 +64,7 @@ class Page implements PageContract, Responsable
     /**
      * Set the inertia component.
      *
-     * @param  string $page
+     * @param  string  $page
      * @return $this
      */
     public function page($page)
@@ -77,8 +77,8 @@ class Page implements PageContract, Responsable
     /**
      * Add data to the page.
      *
-     * @param  string $attribute
-     * @param  string $data
+     * @param  string  $attribute
+     * @param  string  $data
      * @return $this
      */
     public function with($attribute, $data = null)
@@ -91,7 +91,7 @@ class Page implements PageContract, Responsable
     /**
      * Add component to the page.
      *
-     * @param  \Macrame\Contracts\Ui\Component|string $component
+     * @param  \Macrame\Contracts\Ui\Component|string  $component
      * @return $this
      */
     public function component($component)
@@ -104,9 +104,9 @@ class Page implements PageContract, Responsable
     /**
      * Add a form to the page.
      *
-     * @param  Form   $form
-     * @param  string $route
-     * @param  bool   $create
+     * @param  Form  $form
+     * @param  string  $route
+     * @param  bool  $create
      * @return $this
      */
     public function form(Form $form, $route, $create = false)
@@ -120,7 +120,7 @@ class Page implements PageContract, Responsable
      * Add table to page.
      *
      * @param  Table  $table
-     * @param  string $route
+     * @param  string  $route
      * @return $this
      */
     public function table(Table $table, $route)
@@ -143,7 +143,7 @@ class Page implements PageContract, Responsable
     /**
      * Create an HTTP response that represents the object.
      *
-     * @param  \Illuminate\Http\Request                   $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function toResponse($request)

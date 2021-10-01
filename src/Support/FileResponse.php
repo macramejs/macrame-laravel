@@ -34,9 +34,8 @@ class FileResponse implements Responsable
     /**
      * Create new FileResponse instance.
      *
-     * @param string          $path
-     * @param CarbonInterface $expired
-     *
+     * @param  string  $path
+     * @param  CarbonInterface  $expired
      * @return void
      */
     public function __construct($path, CarbonInterface $expires = null)
@@ -95,8 +94,7 @@ class FileResponse implements Responsable
     /**
      * Create an HTTP response that represents the object.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function toResponse($request)

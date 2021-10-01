@@ -9,7 +9,7 @@ interface Page
     /**
      * Add data to the page.
      *
-     * @param  string $attribute
+     * @param  string  $attribute
      * @param  mixed  $data
      * @return $this
      */
@@ -18,9 +18,9 @@ interface Page
     /**
      * Add the given form to the page.
      *
-     * @param  Form   $form
-     * @param  string $route
-     * @param  bool   $create
+     * @param  Form  $form
+     * @param  string  $route
+     * @param  bool  $create
      * @return $this
      */
     public function form(Form $form, $route, $create = false);

@@ -10,9 +10,8 @@ interface Component extends Arrayable, Jsonable
     /**
      * Add a prop to the component.
      *
-     * @param string $name
-     * @param mixed  $value
-     *
+     * @param  string  $name
+     * @param  mixed  $value
      * @return $this
      */
     public function prop($name, $value);
@@ -20,7 +19,7 @@ interface Component extends Arrayable, Jsonable
     /**
      * Bind multiple props.
      *
-     * @param  array $props
+     * @param  array  $props
      * @return $this
      */
     public function bind($props);
@@ -28,7 +27,7 @@ interface Component extends Arrayable, Jsonable
     /**
      * Set component name.
      *
-     * @param  string $name
+     * @param  string  $name
      * @return $this
      */
     public function setName($name);

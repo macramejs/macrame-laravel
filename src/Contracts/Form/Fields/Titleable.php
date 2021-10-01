@@ -7,7 +7,7 @@ interface Titleable
     /**
      * Set field title.
      *
-     * @param  string $title
+     * @param  string  $title
      * @return $this
      */
     public function title($title);
@@ -15,7 +15,7 @@ interface Titleable
     /**
      * Set field title html tag.
      *
-     * @param  string $tag
+     * @param  string  $tag
      * @return $this
      */
     public function titleTag($tag);
@@ -23,7 +23,7 @@ interface Titleable
     /**
      * Determine wether the field has a title.
      *
-     * @param  bool $hasTitle
+     * @param  bool  $hasTitle
      * @return bool
      */
     public function hasTitle(bool $hasTitle);

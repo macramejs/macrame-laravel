@@ -33,7 +33,7 @@ class Select extends Field implements Titleable
     /**
      * Create new Select instance.
      *
-     * @param  string $attribute
+     * @param  string  $attribute
      * @param  array  $options
      * @return void
      */
@@ -46,7 +46,7 @@ class Select extends Field implements Titleable
     /**
      * Mount the field.
      *
-     * @param  \Macrame\Contracts\Ui\Component $component
+     * @param  \Macrame\Contracts\Ui\Component  $component
      * @return void
      */
     public function mount($component)
