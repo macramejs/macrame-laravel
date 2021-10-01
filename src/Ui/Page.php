@@ -62,6 +62,19 @@ class Page implements PageContract, Responsable
     }
 
     /**
+     * Set the inertia component.
+     *
+     * @param  string $page
+     * @return $this
+     */
+    public function page($page)
+    {
+        $this->inertiaComponent = $page;
+
+        return $this;
+    }
+
+    /**
      * Add data to the page.
      *
      * @param  string $attribute
