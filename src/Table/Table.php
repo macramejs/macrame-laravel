@@ -4,6 +4,7 @@ namespace Macrame\Table;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Macrame\Contracts\Table\Table as TableContract;
 use Macrame\Table\Filter\Schema as FilterSchema;
@@ -48,7 +49,7 @@ abstract class Table implements TableContract
     /**
      * Get table schema.
      *
-     * @param  \Macrame\Table\Schema  $form
+     * @param  \Macrame\Table\Schema $form
      * @return void
      */
     public function schema(Schema $form)
@@ -59,7 +60,7 @@ abstract class Table implements TableContract
     /**
      * Get filter schema.
      *
-     * @param  \Macrame\Table\Filters\Schema  $filter
+     * @param  \Macrame\Table\Filters\Schema $filter
      * @return void
      */
     public function filters($filter)
@@ -70,9 +71,9 @@ abstract class Table implements TableContract
     /**
      * Retrieve table items.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @param  string  $resource
+     * @param  \Illuminate\Http\Request                           $request
+     * @param  \Illuminate\Database\Eloquent\Builder              $builder
+     * @param  string                                             $resource
      * @return \Illuminate\Http\Resources\Json\ResourceCollection
      */
     public function items(Request $request, $builder, $resource = JsonResource::class)
@@ -83,6 +84,10 @@ abstract class Table implements TableContract
 
         if (method_exists($this, 'filter')) {
             call_user_func_array([$this, 'filter'], [$builder, $this->getFiltersFromRequest($request)]);
+        }
+
+        if (method_exists($this, 'sort')) {
+            call_user_func_array([$this, 'sort'], [$builder, $this->getOrderFromRequest($request)]);
         }
 
         $items = $builder->paginate($this->defaultPerPage);
@@ -101,6 +106,25 @@ abstract class Table implements TableContract
                 return [Str::replaceFirst('filter_', '', $key) => $value];
             })
             ->filter();
+    }
+
+    protected function getOrderFromRequest(Request $request)
+    {
+        $sortBy = $request->get('sortBy');
+        $order = new Collection([]);
+
+        if (! $sortBy) {
+            return $order;
+        }
+
+        foreach ($sortBy as $value) {
+            $parts = explode('.', $value);
+            $direction = array_pop($parts);
+
+            $order[implode('.', $parts)] = $direction;
+        }
+
+        return $order;
     }
 
     /**
@@ -132,7 +156,7 @@ abstract class Table implements TableContract
     /**
      * Set the route where the items should be loaded from.
      *
-     * @param  string  $route
+     * @param  string $route
      * @return $this
      */
     public function from($route)
@@ -197,7 +221,7 @@ abstract class Table implements TableContract
     /**
      * Render the table.
      *
-     * @param  string  $route
+     * @param  string                         $route
      * @return \Ignite\Contracts\Ui\Component
      */
     public function render($route)
