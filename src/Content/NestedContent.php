@@ -1,11 +1,23 @@
 <?php
 
-namespace Macrame\Lang;
+namespace Macrame\Content;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-class Translatable implements CastsAttributes
+class NestedContent implements CastsAttributes
 {
+    /**
+     * Create new SiteContent instance.
+     *
+     * @param  string $collection
+     * @return void
+     */
+    public function __construct(
+        protected $collection = self::class
+    ) {
+        //
+    }
+
     /**
      * Cast the given value.
      *
@@ -17,10 +29,9 @@ class Translatable implements CastsAttributes
      */
     public function get($model, string $key, $value, array $attributes)
     {
-        return new TranslatableAttribute(
-            $model->fromJson($value, asObject: false),
-            app()->getLocale()
-        );
+        $items = json_decode($value, true);
+
+        return new ($this->collection)($model, $items);
     }
 
     /**
@@ -34,10 +45,6 @@ class Translatable implements CastsAttributes
      */
     public function set($model, string $key, $value, array $attributes)
     {
-        if ($value instanceof TranslatableAttribute) {
-            return $value->raw();
-        }
-
-        return $value;
+        return json_encode($value);
     }
 }
