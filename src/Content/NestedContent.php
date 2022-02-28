@@ -9,7 +9,7 @@ class NestedContent implements CastsAttributes
     /**
      * Create new SiteContent instance.
      *
-     * @param  string $collection
+     * @param  string  $collection
      * @return void
      */
     public function __construct(
@@ -21,10 +21,10 @@ class NestedContent implements CastsAttributes
     /**
      * Cast the given value.
      *
-     * @param  \Illuminate\Database\Eloquent\Model $model
-     * @param  string                              $key
-     * @param  mixed                               $value
-     * @param  array                               $attributes
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  string  $key
+     * @param  mixed  $value
+     * @param  array  $attributes
      * @return mixed
      */
     public function get($model, string $key, $value, array $attributes)
@@ -37,10 +37,10 @@ class NestedContent implements CastsAttributes
     /**
      * Prepare the given value for storage.
      *
-     * @param  \Illuminate\Database\Eloquent\Model $model
-     * @param  string                              $key
-     * @param  mixed                               $value
-     * @param  array                               $attributes
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  string  $key
+     * @param  mixed  $value
+     * @param  array  $attributes
      * @return mixed
      */
     public function set($model, string $key, $value, array $attributes)

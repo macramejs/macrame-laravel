@@ -11,8 +11,8 @@ class NestedContentCollection extends Collection
     /**
      * Create new Content instance.
      *
-     * @param array       $items
-     * @param Model|mixed $model
+     * @param  array  $items
+     * @param  Model|mixed  $model
      */
     public function __construct(
         protected mixed $model,
@@ -24,7 +24,7 @@ class NestedContentCollection extends Collection
     /**
      * Parse the items.
      *
-     * @param  array $resources
+     * @param  array  $resources
      * @return $this
      */
     public function parse($resources = [])
@@ -78,8 +78,8 @@ class NestedContentCollection extends Collection
     /**
      * Handle the given items recursively.
      *
-     * @param  array   $items
-     * @param  Closure $closure
+     * @param  array  $items
+     * @param  Closure  $closure
      * @return void
      */
     protected function handleRecursive(array &$items, Closure $closure)
@@ -101,7 +101,7 @@ class NestedContentCollection extends Collection
     /**
      * Parse the given value.
      *
-     * @param  mixed $value
+     * @param  mixed  $value
      * @return void
      */
     protected function parseValue(mixed &$value, $assets = [], $resources = [])
@@ -137,7 +137,7 @@ class NestedContentCollection extends Collection
     /**
      * Parse assets.
      *
-     * @param  string $value
+     * @param  string  $value
      * @return array
      */
     protected function parseAssets(string &$value): array
