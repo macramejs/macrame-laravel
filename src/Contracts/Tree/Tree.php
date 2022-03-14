@@ -14,5 +14,5 @@ interface Tree
 
     public function children(): HasMany;
 
-    public function root(): Collection;
+    public static function root(): Collection;
 }
