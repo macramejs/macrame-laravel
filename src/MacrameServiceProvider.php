@@ -4,7 +4,6 @@ namespace Macrame;
 
 use Illuminate\Support\ServiceProvider;
 use Macrame\Foundation\FoundationServiceProvider;
-use Macrame\Ui\UiServiceProvider;
 
 class MacrameServiceProvider extends ServiceProvider
 {

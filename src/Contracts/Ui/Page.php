@@ -3,7 +3,6 @@
 namespace Macrame\Contracts\Ui;
 
 use Illuminate\Contracts\Support\Responsable;
-use Macrame\Contracts\Form\Form;
 
 interface Page extends Responsable
 {
