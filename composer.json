@@ -30,5 +30,15 @@
         "illuminate/support": "^8.46|^9.0",
         "illuminate/contracts": "^8.46|^9.0",
         "inertiajs/inertia-laravel": "^0.4|^0.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Macrame\\MacrameServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     }
 }

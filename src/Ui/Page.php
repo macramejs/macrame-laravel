@@ -2,14 +2,11 @@
 
 namespace Macrame\Ui;
 
-use Illuminate\Contracts\Support\Responsable;
 use Inertia\Inertia;
 use Inertia\Response;
-use Macrame\Contracts\Form\Form;
-use Macrame\Contracts\Table\Table;
 use Macrame\Contracts\Ui\Page as PageContract;
 
-class Page implements PageContract, Responsable
+class Page implements PageContract
 {
     /**
      * Page data.
@@ -97,35 +94,6 @@ class Page implements PageContract, Responsable
     public function component($component)
     {
         $this->components[] = component($component);
-
-        return $this;
-    }
-
-    /**
-     * Add a form to the page.
-     *
-     * @param  Form  $form
-     * @param  string  $route
-     * @param  bool  $create
-     * @return $this
-     */
-    public function form(Form $form, $route, $create = false)
-    {
-        $this->components[] = $form->render($route, $create);
-
-        return $this;
-    }
-
-    /**
-     * Add table to page.
-     *
-     * @param  Table  $table
-     * @param  string  $route
-     * @return $this
-     */
-    public function table(Table $table, $route)
-    {
-        $this->components[] = $table->render($route);
 
         return $this;
     }

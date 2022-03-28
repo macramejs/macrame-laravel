@@ -15,7 +15,6 @@ class MacrameServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(UiServiceProvider::class);
         $this->app->register(FoundationServiceProvider::class);
     }
 }

@@ -2,9 +2,10 @@
 
 namespace Macrame\Contracts\Ui;
 
+use Illuminate\Contracts\Support\Responsable;
 use Macrame\Contracts\Form\Form;
 
-interface Page
+interface Page extends Responsable
 {
     /**
      * Add data to the page.
@@ -14,16 +15,6 @@ interface Page
      * @return $this
      */
     public function with($attribute, $data = null);
-
-    /**
-     * Add the given form to the page.
-     *
-     * @param  Form  $form
-     * @param  string  $route
-     * @param  bool  $create
-     * @return $this
-     */
-    public function form(Form $form, $route, $create = false);
 
     /**
      * Render the page.
