@@ -8,6 +8,18 @@ use Illuminate\Support\Collection;
 
 trait IsTree
 {
+    public static function updateOrder($order, $parentId = null)
+    {
+        foreach ($order as $position => $model) {
+            static::whereKey($model['id'])->update([
+                'parent_id'    => $parentId,
+                'order_column' => $position,
+            ]);
+
+            static::updateOrder($model['children'], $model['id']);
+        }
+    }
+
     public function isSortable(): bool
     {
         if (property_exists($this, 'sortable')) {

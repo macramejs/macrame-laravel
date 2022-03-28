@@ -15,4 +15,6 @@ interface Tree
     public function children(): HasMany;
 
     public static function root(): Collection;
+
+    public static function updateOrder($order, $parentId = null);
 }
