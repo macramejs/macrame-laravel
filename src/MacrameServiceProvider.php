@@ -3,8 +3,7 @@
 namespace Macrame;
 
 use Illuminate\Support\ServiceProvider;
-use Macrame\Foundation\FoundationServiceProvider;
-use Macrame\Ui\UiServiceProvider;
+use Macrame\Console\ConsoleServiceProvider;
 
 class MacrameServiceProvider extends ServiceProvider
 {
@@ -15,6 +14,6 @@ class MacrameServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(FoundationServiceProvider::class);
+        $this->app->register(ConsoleServiceProvider::class);
     }
 }

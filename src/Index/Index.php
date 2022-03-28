@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Macrame\Contracts\Table\Table as TableContract;
+use Macrame\Contracts\Index\Index as IndexContract;
 use Macrame\Table\Filter\Schema as FilterSchema;
 
-abstract class Table implements TableContract
+abstract class Index implements IndexContract
 {
     /**
      * Table schema.
@@ -49,7 +49,7 @@ abstract class Table implements TableContract
     /**
      * Get table schema.
      *
-     * @param  \Macrame\Table\Schema  $form
+     * @param  \Macrame\Table\Schema $form
      * @return void
      */
     public function schema(Schema $form)
@@ -60,7 +60,7 @@ abstract class Table implements TableContract
     /**
      * Get filter schema.
      *
-     * @param  \Macrame\Table\Filters\Schema  $filter
+     * @param  \Macrame\Table\Filters\Schema $filter
      * @return void
      */
     public function filters($filter)
@@ -71,9 +71,9 @@ abstract class Table implements TableContract
     /**
      * Retrieve table items.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
-     * @param  string  $resource
+     * @param  \Illuminate\Http\Request                           $request
+     * @param  \Illuminate\Database\Eloquent\Builder              $builder
+     * @param  string                                             $resource
      * @return \Illuminate\Http\Resources\Json\ResourceCollection
      */
     public function items(Request $request, $builder, $resource = JsonResource::class)
@@ -156,7 +156,7 @@ abstract class Table implements TableContract
     /**
      * Set the route where the items should be loaded from.
      *
-     * @param  string  $route
+     * @param  string $route
      * @return $this
      */
     public function from($route)
@@ -221,7 +221,7 @@ abstract class Table implements TableContract
     /**
      * Render the table.
      *
-     * @param  string  $route
+     * @param  string                         $route
      * @return \Ignite\Contracts\Ui\Component
      */
     public function render($route)
