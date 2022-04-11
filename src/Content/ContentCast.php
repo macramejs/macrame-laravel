@@ -58,8 +58,8 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
     /**
      * Get array from resource and model.
      *
-     * @param string $resource
-     * @param Model $model
+     * @param  string  $resource
+     * @param  Model  $model
      * @return array
      */
     protected function resourceArray($resource, $model)
@@ -70,8 +70,8 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
     /**
      * Get array from resource and model.
      *
-     * @param string $resource
-     * @param Model $model
+     * @param  string  $resource
+     * @param  Model  $model
      * @return array
      */
     protected function resourceCollectionArray($resource, $model)
@@ -93,7 +93,7 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
         if ($value instanceof $this) {
             return $value->toJson();
         }
-        
+
         return json_encode($value, 0);
     }
 
