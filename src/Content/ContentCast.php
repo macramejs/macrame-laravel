@@ -56,6 +56,30 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
     }
 
     /**
+     * Get array from resource and model.
+     *
+     * @param string $resource
+     * @param Model $model
+     * @return array
+     */
+    protected function resourceArray($resource, $model)
+    {
+        return (new $resource($model))->toArray(request());
+    }
+
+    /**
+     * Get array from resource and model.
+     *
+     * @param string $resource
+     * @param Model $model
+     * @return array
+     */
+    protected function resourceCollectionArray($resource, $model)
+    {
+        return $resource::collection()->toArray(request());
+    }
+
+    /**
      * Prepare the given value for storage.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
@@ -66,7 +90,11 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
      */
     public function set($model, string $key, $value, array $attributes)
     {
-        return $value->toJson();
+        if ($value instanceof $this) {
+            return $value->toJson();
+        }
+        
+        return json_encode($value, 0);
     }
 
     /**
