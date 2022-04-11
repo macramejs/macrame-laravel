@@ -2,17 +2,17 @@
 
 namespace Macrame\Content;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
 {
     /**
      * Parse items.
      *
-     * @param array $items
+     * @param  array  $items
      * @return $this
      */
     abstract public function parse();
@@ -20,7 +20,7 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
     /**
      * Create new PageContent instance.
      *
-     * @param array $data
+     * @param  array  $data
      */
     public function __construct(
         protected ?Model $model = null,
