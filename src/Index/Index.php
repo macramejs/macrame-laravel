@@ -72,25 +72,25 @@ abstract class Index implements IndexContract
      * Retrieve table items.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string  $resource
      * @return \Illuminate\Http\Resources\Json\ResourceCollection
      */
-    public function items(Request $request, $builder, $resource = JsonResource::class)
+    public function items(Request $request, $query, $resource = JsonResource::class)
     {
         if ($this->hasSearch()) {
-            call_user_func_array([$this, 'search'], [$builder, $request->search]);
+            call_user_func_array([$this, 'search'], [$query, $request->search]);
         }
 
         if (method_exists($this, 'filter')) {
-            call_user_func_array([$this, 'filter'], [$builder, $this->getFiltersFromRequest($request)]);
+            call_user_func_array([$this, 'filter'], [$query, $this->getFiltersFromRequest($request)]);
         }
 
         if (method_exists($this, 'sort')) {
-            call_user_func_array([$this, 'sort'], [$builder, $this->getOrderFromRequest($request)]);
+            call_user_func_array([$this, 'sort'], [$query, $this->getOrderFromRequest($request)]);
         }
 
-        $items = $builder->paginate($this->defaultPerPage);
+        $items = $query->paginate($this->defaultPerPage);
 
         return $resource::collection($items);
     }
