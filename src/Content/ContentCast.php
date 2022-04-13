@@ -119,9 +119,9 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
             if ($item['value'] instanceof Repeatable) {
                 $repArray = $item['value']->toArray();
 
-                foreach ($repArray as $key => $value) {
+                foreach ($repArray as $repArrayKey => $value) {
                     if ($value instanceof JsonResource || $value instanceof ResourceCollection) {
-                        $repArray[$key] = $value->toArray(request());
+                        $repArray[$repArrayKey] = $value->toArray(request());
                     }
                 }
 
