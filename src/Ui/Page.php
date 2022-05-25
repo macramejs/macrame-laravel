@@ -93,7 +93,6 @@ class Page implements PageContract
         return $this;
     }
 
-
     /**
      * Add component to the page.
      *
