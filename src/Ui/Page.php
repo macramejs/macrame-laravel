@@ -74,16 +74,25 @@ class Page implements PageContract
     /**
      * Add data to the page.
      *
-     * @param  string  $attribute
+     * @param  string  $attributes
      * @param  string  $data
      * @return $this
      */
-    public function with($attribute, $data = null)
+    public function with($attributes, $data = null)
     {
-        $this->data[$attribute] = $data;
+        if (is_array($attributes)) {
+            foreach ($attributes as $attribute => $value) {
+                $this->data[$attribute] = $value;
+            }
+        }
+
+        if (is_string($attributes) && $data) {
+            $this->data[$attributes] = $data;
+        }
 
         return $this;
     }
+
 
     /**
      * Add component to the page.
