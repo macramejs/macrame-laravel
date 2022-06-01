@@ -4,7 +4,7 @@ namespace Macrame\Content\Contracts;
 
 use Illuminate\Contracts\Support\Arrayable;
 
-interface Repeatable extends Arrayable
+interface Parser extends Arrayable
 {
     /**
      * Parse the repeatable.
