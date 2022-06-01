@@ -8,7 +8,7 @@ use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use Macrame\Content\Contracts\Repeatable;
+use Macrame\Content\Contracts\Parser;
 
 abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
 {
@@ -116,7 +116,7 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
                 continue;
             }
 
-            if ($item['value'] instanceof Repeatable) {
+            if ($item['value'] instanceof Parser) {
                 $repArray = $item['value']->toArray();
 
                 foreach ($repArray as $repArrayKey => $value) {
