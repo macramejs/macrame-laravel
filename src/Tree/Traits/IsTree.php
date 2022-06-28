@@ -8,15 +8,17 @@ use Illuminate\Support\Collection;
 
 trait IsTree
 {
-    public static function updateOrder($order, $parentId = null)
+    public function scopeUpdateOrder($query, $order, $parentId = null)
     {
+        $items = $query->get();
+
         foreach ($order as $position => $model) {
-            static::whereKey($model['id'])->update([
+            $items->where('id', $model['id'])->each->update([
                 'parent_id'    => $parentId,
                 'order_column' => $position,
             ]);
 
-            static::updateOrder($model['children'], $model['id']);
+            $query->updateOrder($model['children'], $model['id']);
         }
     }
 
