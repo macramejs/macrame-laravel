@@ -107,6 +107,10 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
      */
     public function toArray()
     {
+        if (empty($this->items)) {
+            return new \stdClass;
+        }
+
         foreach ($this->items as $key => $item) {
             if (! is_array($item)) {
                 continue;
