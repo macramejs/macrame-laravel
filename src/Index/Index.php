@@ -112,11 +112,11 @@ abstract class Index implements IndexContract
     {
         $sortBy = (array) json_decode(urldecode($request->get('sortBy')));
         $order = new Collection([]);
-        
-        if (!is_array($sortBy)) {
+
+        if (! is_array($sortBy)) {
             return $order;
         }
-        
+
         foreach ($sortBy as $key => $direction) {
             $order[$key] = $direction;
         }
