@@ -113,7 +113,7 @@ abstract class Index implements IndexContract
         $sortBy = urldecode($request->get('sortBy'));
         $order = new Collection([]);
 
-        if (!is_array($sortBy)) {
+        if (! is_array($sortBy)) {
             return $order;
         }
 
