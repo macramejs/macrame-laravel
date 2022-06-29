@@ -110,10 +110,10 @@ abstract class Index implements IndexContract
 
     protected function getOrderFromRequest(Request $request)
     {
-        $sortBy = $request->get('sortBy');
+        $sortBy = urldecode($request->get('sortBy'));
         $order = new Collection([]);
 
-        if (! $sortBy) {
+        if (!is_array($sortBy)) {
             return $order;
         }
 
