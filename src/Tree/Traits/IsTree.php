@@ -62,4 +62,19 @@ trait IsTree
     {
         $query->whereNull('parent_id');
     }
+
+    public function isRoot(): bool
+    {
+        return $this->parent_id == null;
+    }
+
+    public function scopeWhereLeaf($query)
+    {
+        $query->doesntHave('children');
+    }
+
+    public function isLeaf(): bool
+    {
+        return $this->children()->count() === 0;
+    }
 }
