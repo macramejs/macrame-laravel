@@ -108,7 +108,6 @@ abstract class Index implements IndexContract
         return $this->defaultPerPage;
     }
 
-
     protected function getFiltersFromRequest(Request $request)
     {
         return collect($request->all())
