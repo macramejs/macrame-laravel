@@ -90,9 +90,22 @@ abstract class Index implements IndexContract
             call_user_func_array([$this, 'sort'], [$query, $this->getOrderFromRequest($request)]);
         }
 
-        $items = $query->paginate($this->defaultPerPage);
+        if (($perPage = $this->getItemsPerPage($request)) == -1) {
+            $items = $query->get();
+        } else {
+            $items = $query->paginate($perPage);
+        }
 
         return $resource::collection($items);
+    }
+
+    protected function getItemsPerPage(Request $request)
+    {
+        if ($request->perPage) {
+            return $request->perPage;
+        }
+
+        return $this->defaultPerPage;
     }
 
     protected function getFiltersFromRequest(Request $request)
