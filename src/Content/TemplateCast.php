@@ -2,11 +2,11 @@
 
 namespace Macrame\Content;
 
-use Illuminate\Support\Stringable;
-use Macrame\Content\Contracts\Loader;
+use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Support\Stringable;
+use Macrame\Content\Contracts\Loader;
 
 abstract class TemplateCast implements CastsAttributes, Stringable
 {
@@ -19,7 +19,7 @@ abstract class TemplateCast implements CastsAttributes, Stringable
      */
     public function __construct(
         protected ?Model $model = null,
-        protected ?string $template = "",
+        protected ?string $template = '',
     ) {
         //
     }
@@ -29,11 +29,11 @@ abstract class TemplateCast implements CastsAttributes, Stringable
      *
      * @return array|JsonResource
      */
-    public function data(): array | JsonResource
+    public function data(): array|JsonResource
     {
         $parsers = $this->getParsers();
 
-        if(!array_key_exists($this->template, $parsers)) {
+        if (! array_key_exists($this->template, $parsers)) {
             return [];
         }
 
@@ -47,7 +47,7 @@ abstract class TemplateCast implements CastsAttributes, Stringable
     /**
      * Get the instance of the given loader class.
      *
-     * @param  string $loader
+     * @param  string  $loader
      * @return Loader
      */
     public function getLoaderInstance($loader): Loader
@@ -64,7 +64,7 @@ abstract class TemplateCast implements CastsAttributes, Stringable
     {
         return $this->parsers;
     }
-    
+
     /**
      * Cast the given value.
      *
