@@ -2,13 +2,12 @@
 
 namespace Macrame\Content;
 
-use Illuminate\Support\Stringable;
 use Macrame\Content\Contracts\Loader;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
-abstract class TemplateCast implements CastsAttributes, Stringable
+abstract class TemplateCast implements CastsAttributes
 {
     /**
      * Create new PageContent instance.
