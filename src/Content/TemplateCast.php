@@ -26,9 +26,9 @@ abstract class TemplateCast implements CastsAttributes
     /**
      * Get the data of the associated template.
      *
-     * @return array|JsonResource
+     * @return Loader
      */
-    public function data(): array|JsonResource
+    public function data(): array|Loader
     {
         $parsers = $this->getParsers();
 
@@ -36,7 +36,7 @@ abstract class TemplateCast implements CastsAttributes
             return [];
         }
 
-        $instance = $this->getLoaderInstance($this->parsers[$parsers]);
+        $instance = $this->getLoaderInstance($parsers[$this->template]);
 
         $instance->load();
 
@@ -51,7 +51,7 @@ abstract class TemplateCast implements CastsAttributes
      */
     public function getLoaderInstance($loader): Loader
     {
-        return new $loader();
+        return new $loader($this->model);
     }
 
     /**
