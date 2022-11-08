@@ -4,6 +4,7 @@ namespace Macrame\Content;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Macrame\Content\Contracts\Loader;
 
 abstract class TemplateCast implements CastsAttributes
@@ -17,7 +18,7 @@ abstract class TemplateCast implements CastsAttributes
      */
     public function __construct(
         protected ?Model $model = null,
-        protected ?string $template = '',
+        public ?string $template = '',
     ) {
         //
     }
