@@ -112,13 +112,13 @@ abstract class ContentCast implements CastsAttributes, Arrayable, Jsonable
         }
 
         foreach ($this->items as $key => $item) {
-            if($item instanceof Parser) {
+            if ($item instanceof Parser) {
                 $this->items[$key] = $item->toArray();
-            } else if (! is_array($item)) {
+            } elseif (! is_array($item)) {
                 continue;
-            } else if (! array_key_exists('value', $item)) {
+            } elseif (! array_key_exists('value', $item)) {
                 continue;
-            } else if ($item['value'] instanceof Parser) {
+            } elseif ($item['value'] instanceof Parser) {
                 $repArray = $item['value']->toArray();
 
                 foreach ($repArray as $repArrayKey => $value) {
