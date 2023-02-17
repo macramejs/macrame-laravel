@@ -27,8 +27,8 @@
         "phpunit/phpunit": "^9.5"
     },
     "require": {
-        "illuminate/support": "^8.46|^9.0",
-        "illuminate/contracts": "^8.46|^9.0",
+        "illuminate/support": "^8.46|^9.0|^10.0",
+        "illuminate/contracts": "^8.46|^9.0|^10.0",
         "inertiajs/inertia-laravel": "^0.5|^0.6"
     },
     "extra": {
