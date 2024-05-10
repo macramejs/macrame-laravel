@@ -14,7 +14,7 @@ trait IsTree
 
         foreach ($order as $position => $model) {
             $items->where('id', $model['id'])->each->update([
-                'parent_id'    => $parentId,
+                'parent_id' => $parentId,
                 'order_column' => $position,
             ]);
 

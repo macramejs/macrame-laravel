@@ -40,7 +40,7 @@ class FieldHasTitleTest extends TestCase
         $this->assertInstanceOf(Component::class, $component = $field->getComponent());
         $props = new AssertableJsonString($component->getProps());
         $props->assertFragment([
-            'title'    => 'foo',
+            'title' => 'foo',
             'hasTitle' => true,
             'titleTag' => 'h5',
         ]);

@@ -76,7 +76,7 @@ class FileResponse implements Responsable
         }
 
         return [
-            'js'  => 'application/javascript',
+            'js' => 'application/javascript',
             'png' => 'image/png',
         ][$info['extension']] ?? "text/{$info['extension']}";
     }
@@ -107,14 +107,14 @@ class FileResponse implements Responsable
 
         if ($this->matchesCache()) {
             return response()->make('', 304, [
-                'Expires'       => $this->expires->toRfc7231String(),
+                'Expires' => $this->expires->toRfc7231String(),
                 'Cache-Control' => $cacheControl,
             ]);
         }
 
         return response()->file($this->path, [
-            'Content-Type'  => $this->getMimeType().'; charset=utf-8',
-            'Expires'       => $this->expires->toRfc7231String(),
+            'Content-Type' => $this->getMimeType().'; charset=utf-8',
+            'Expires' => $this->expires->toRfc7231String(),
             'Cache-Control' => $cacheControl,
             'Last-Modified' => $this->lastModified()->toRfc7231String(),
         ]);

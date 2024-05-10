@@ -114,7 +114,7 @@ class Component implements ComponentContract
     {
         return $this->renderArray([
             'props' => $this->props,
-            'name'  => $this->name,
+            'name' => $this->name,
         ]);
     }
 

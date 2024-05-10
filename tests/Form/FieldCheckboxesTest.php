@@ -22,7 +22,7 @@ class FieldCheckboxesTest extends TestCase
         $props = new AssertableJsonString($component->getProps());
         $props->assertFragment([
             'attribute' => 'foo',
-            'options'   => ['bar' => 'Bar'],
+            'options' => ['bar' => 'Bar'],
         ]);
         $this->assertArrayHasKey('checkboxComponent', $props->json);
         $this->assertInstanceOf(Component::class, $props['checkboxComponent']);

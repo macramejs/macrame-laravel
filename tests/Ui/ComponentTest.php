@@ -35,7 +35,7 @@ class ComponentTest extends TestCase
         $component->bind(['bar' => 'baz']);
         $this->assertEquals([
             'props' => ['bar' => 'baz'],
-            'name'  => 'foo',
+            'name' => 'foo',
         ], $component->toArray());
     }
 
@@ -58,10 +58,10 @@ class ComponentTest extends TestCase
         $component->prop('bar', new Component('baz'));
 
         $this->assertEquals([
-            'name'  => 'foo',
+            'name' => 'foo',
             'props' => [
                 'bar' => [
-                    'name'  => 'baz',
+                    'name' => 'baz',
                     'props' => [],
                 ],
             ],

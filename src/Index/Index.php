@@ -146,11 +146,11 @@ abstract class Index implements IndexContract
     public function getComponent()
     {
         return component($this->componentName, [
-            'syncUrl'        => $this->syncUrl,
+            'syncUrl' => $this->syncUrl,
             'defaultPerPage' => $this->defaultPerPage,
-            'hasSearch'      => $this->hasSearch(),
-            'filters'        => $this->getFilters()->toArray(),
-            'schema'         => $this->getSchema()->toArray(),
+            'hasSearch' => $this->hasSearch(),
+            'filters' => $this->getFilters()->toArray(),
+            'schema' => $this->getSchema()->toArray(),
         ]);
     }
 

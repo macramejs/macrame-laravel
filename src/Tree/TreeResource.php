@@ -15,7 +15,7 @@ class TreeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'value'    => $this->value($request),
+            'value' => $this->value($request),
             'children' => $this->children(),
         ];
     }
